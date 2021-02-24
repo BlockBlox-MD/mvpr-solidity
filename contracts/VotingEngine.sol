@@ -173,7 +173,7 @@ contract VotingEngine {
 
         // All conditions are met; calculate votes
         uint256 totalVotes = vote.againstVotes.add(vote.forVotes);
-        if (vote.againstVotes > vote.forVotes) {
+        if (vote.againstVotes >= vote.forVotes) {
             console.log("against votes ");
             vote.againstVotes.mul(uint256(10000)).div(totalVotes.mul(100)) >
                 threshold
